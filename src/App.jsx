@@ -4,6 +4,7 @@ import { Typography, Box, Card } from "@mui/material";
 import "./App.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import Fixtures from "./components/Fixtures";
+import News from "./components/News";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
             Today is results
           </Typography>
           <hr />
-          <Fixtures />
+          {/* <Fixtures /> */}
+          <News />
         </Card>
       </Box>
     </>
