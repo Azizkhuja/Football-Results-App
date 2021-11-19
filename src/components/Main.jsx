@@ -6,10 +6,18 @@ import logo from "../images/hero.svg";
 const Main = () => {
   return (
     <Card color="secondary">
-      <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
+      <Grid
+        container
+        spacing={1}
+        sx={{ justifyContent: "center", alignItems: "center" }}
+      >
         <Grid item md={7}>
           <CardContent>
-            <Typography variant="h2" component="div">
+            <Typography
+              variant="h2"
+              component="div"
+              sx={{ fontWeight: "bold" }}
+            >
               Football Statistics
             </Typography>
             <Typography variant="body1" color="text.secondary">
@@ -25,7 +33,7 @@ const Main = () => {
             component="img"
             height="300"
             image={logo}
-            alt="green iguana"
+            alt="hero image"
           />
         </Grid>
       </Grid>

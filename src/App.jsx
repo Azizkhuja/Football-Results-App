@@ -3,7 +3,11 @@ import React, { useState, useEffect } from "react";
 import { Grid, Container, Box } from "@mui/material";
 import "./App.css";
 import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import {
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
+} from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
@@ -15,6 +19,8 @@ const theme = createTheme({
     },
   },
 });
+let theme1 = createTheme();
+theme1 = responsiveFontSizes(theme1);
 
 import Fixtures from "./components/Fixtures";
 import News from "./components/News";
@@ -25,7 +31,7 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={(theme, theme1)}>
         <Container>
           <Navbar />
           <Box
