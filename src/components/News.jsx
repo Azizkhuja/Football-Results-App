@@ -344,7 +344,7 @@ const News = () => {
               <Typography gutterBottom variant="h6" component="div">
                 {bestScorer.player.firstname} {bestScorer.player.lastname}
               </Typography>
-              <Typography mb={1}>
+              <Typography variant="h6" mb={1}>
                 {bestScorer.statistics.map((league) => (
                   <div key={league.league.id}>
                     <Stack
@@ -365,21 +365,17 @@ const News = () => {
                   </div>
                 ))}
               </Typography>
-              <Typography variant="h6" color="text.secondary">
+              <Typography color="text.secondary">
                 Total goals:{" "}
                 {bestScorer.statistics.map((goal) => goal.goals.total)} <br />{" "}
-                Total assists:{" "}
-                {bestScorer.statistics.map((goal) => goal.goals.assists)}
+                {bestScorer.statistics.map(
+                  (goal) =>
+                    `Total assists: ${
+                      goal.goals.assists ? goal.goals.assists : "No assists yet"
+                    }`
+                )}
               </Typography>
-              <CardActions>
-                <Button
-                  variant="outlined"
-                  fullWidth
-                  startIcon={<InfoOutlinedIcon />}
-                >
-                  Learn More
-                </Button>
-              </CardActions>
+              <CardActions>Learn More</CardActions>
             </CardContent>
           </CardActionArea>
         </Card>
