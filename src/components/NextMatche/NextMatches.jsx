@@ -8,18 +8,18 @@ import {
   Typography,
   Stack,
   Avatar,
+  Button,
 } from "@mui/material";
 
 const NextMatches = () => {
   return (
-    // <Card sx={{ borderRadius: "00px" }}>
     <>
       <Grid container mt={2}>
         <Grid item xs={6}>
           <Typography variant="h5">Next Matches</Typography>
         </Grid>
         <Grid item xs={6} sx={{ display: "flex", justifyContent: "flex-end" }}>
-          <Typography>View all</Typography>
+          <Button variant="text">View all</Button>
         </Grid>
       </Grid>
       <Grid container spacing={1}>
@@ -27,7 +27,12 @@ const NextMatches = () => {
           <Card sx={{ p: 2, display: "flex" }}>
             <Grid container sx={{ alignItems: "center" }}>
               <Grid item xs={12} sx={{ textAlign: "center" }}>
-                <Typography variant="h5">Round 12</Typography>
+                <Typography
+                  variant="h6"
+                  sx={{ fontWeight: 500, fontFamily: "Montserrat" }}
+                >
+                  Round 12
+                </Typography>
               </Grid>
               <Grid
                 item
@@ -75,8 +80,6 @@ const NextMatches = () => {
         </Grid>
       </Grid>
     </>
-
-    // </Card>
   );
 };
 
