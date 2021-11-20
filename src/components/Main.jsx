@@ -1,9 +1,12 @@
 import React from "react";
 import { Grid, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import logo from "../images/hero.svg";
 
 const Main = () => {
+  const matches = useMediaQuery("(max-width: 375px)");
+
   return (
     <Card color="secondary">
       <Grid
@@ -31,7 +34,7 @@ const Main = () => {
         <Grid item md={5}>
           <CardMedia
             component="img"
-            height="300"
+            height={matches ? 200 : 300}
             image={logo}
             alt="hero image"
           />
