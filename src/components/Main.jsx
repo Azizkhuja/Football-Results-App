@@ -8,7 +8,7 @@ const Main = () => {
   const matches = useMediaQuery("(max-width: 375px)");
 
   return (
-    <Card color="secondary">
+    <Card color="secondary" sx={{ borderRadius: "00px" }}>
       <Grid
         container
         spacing={1}

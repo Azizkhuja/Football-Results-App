@@ -15,32 +15,32 @@ const theme = createTheme({
       main: "#3B6AE2",
     },
     secondary: {
-      main: "#fefefe",
+      main: "#f7f7f7",
     },
   },
 });
-let theme1 = createTheme();
-theme1 = responsiveFontSizes(theme1);
 
 import Fixtures from "./components/Fixtures";
 import News from "./components/News";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
+import NextMatches from "./components/NextMatche/NextMatches";
 
 function App() {
   return (
     <>
       <CssBaseline />
-      <ThemeProvider theme={(theme, theme1)}>
+      <ThemeProvider theme={theme}>
         <Container>
           <Navbar />
           <Box
             mt={1}
-            sx={{ bgcolor: "primary.main", borderRadius: "10px", p: 2 }}
+            sx={{ bgcolor: "secondary.main", borderRadius: "10px", p: 2 }}
           >
             <Grid container>
               <Grid item xs={12}>
                 <Main />
+                <NextMatches />
               </Grid>
             </Grid>
           </Box>
