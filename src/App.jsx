@@ -23,6 +23,7 @@ import Main from "./components/Main";
 import NextMatches from "./components/NextMatche/NextMatches";
 import League from "./components/League";
 import News from "./components/News/News";
+import AfterGame from "./components/AfterGame/AfterGame";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
                 <Main />
                 <News />
                 <NextMatches />
+                <AfterGame />
 
                 {/* <Fixtures /> */}
                 {/* <League /> */}

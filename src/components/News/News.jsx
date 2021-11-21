@@ -102,7 +102,21 @@ const News = () => {
         </Grid>
       </Grid>
       {/* News items */}
-      <Swiper spaceBetween={10} slidesPerView={4.2}>
+      <Swiper
+        spaceBetween={10}
+        slidesPerView={1}
+        breakpoints={{
+          410: {
+            slidesPerView: 1,
+          },
+          411: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 4,
+          },
+        }}
+      >
         <Grid container spacing={1} mt={1}>
           {arrNews.map((news, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
