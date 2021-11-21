@@ -3,11 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Grid, Container, Box } from "@mui/material";
 import "./App.css";
 import CssBaseline from "@mui/material/CssBaseline";
-import {
-  ThemeProvider,
-  createTheme,
-  responsiveFontSizes,
-} from "@mui/material/styles";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
@@ -21,10 +17,12 @@ const theme = createTheme({
 });
 
 import Fixtures from "./components/Fixtures";
-import News from "./components/News";
+import Scorers from "./components/Scorers";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import NextMatches from "./components/NextMatche/NextMatches";
+import League from "./components/League";
+import News from "./components/News/News";
 
 function App() {
   return (
@@ -40,7 +38,11 @@ function App() {
             <Grid container>
               <Grid item xs={12}>
                 <Main />
-                <NextMatches />
+                <News />
+                {/* <NextMatches /> */}
+
+                {/* <Fixtures /> */}
+                {/* <League /> */}
               </Grid>
             </Grid>
           </Box>
@@ -50,7 +52,7 @@ function App() {
       {/* <Box mt={2} ml="auto" mr="auto" width={1200} className="app"> */}
       {/* <Card> */}
       {/* <Fixtures /> */}
-      {/* <News /> */}
+      {/* <Scorers /> */}
       {/* </Card> */}
       {/* </Box> */}
 

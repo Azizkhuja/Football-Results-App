@@ -306,7 +306,7 @@ const bestScorers = [
   },
 ];
 
-const News = () => {
+const Scorers = () => {
   const [getNews, setGetNews] = useState([]);
 
   useEffect(() => {
@@ -384,4 +384,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default Scorers;

@@ -392,7 +392,7 @@ const Fixtures = () => {
         .then((response) => {
           //   const apiGetter = response.data.response;
           const apiGetter = response.data.response.slice(0, 30);
-          console.log(apiGetter);
+          // console.log(apiGetter);
           setGetVideos(apiGetter);
         })
         .catch(function (error) {
