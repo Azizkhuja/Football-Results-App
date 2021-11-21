@@ -14,7 +14,8 @@
     "axios": "^0.24.0",
     "moment": "^2.29.1",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "swiper": "^7.3.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.0",

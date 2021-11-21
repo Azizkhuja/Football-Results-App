@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
 
 import {
   Grid,
@@ -99,30 +102,34 @@ const News = () => {
         </Grid>
       </Grid>
       {/* News items */}
-      <Grid container spacing={1} mt={1}>
-        {arrNews.map((news, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea href={news.url} target="_blank">
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={news?.img || demoImg}
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography sx={{ fontWeight: "bold" }}>
-                    {news.title}
-                  </Typography>
-                  <Typography variant="overline">
-                    Source: {news.source}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+      <Swiper spaceBetween={10} slidesPerView={4.2}>
+        <Grid container spacing={1} mt={1}>
+          {arrNews.map((news, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index}>
+              <SwiperSlide key={index}>
+                <Card sx={{ maxWidth: 345 }}>
+                  <CardActionArea href={news.url} target="_blank">
+                    <CardMedia
+                      component="img"
+                      height="200"
+                      image={news?.img || demoImg}
+                      alt="green iguana"
+                    />
+                    <CardContent>
+                      <Typography sx={{ fontWeight: "bold" }}>
+                        {news.title}
+                      </Typography>
+                      <Typography variant="overline">
+                        Source: {news.source}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </SwiperSlide>
+            </Grid>
+          ))}
+        </Grid>
+      </Swiper>
     </>
   );
 };

@@ -39,7 +39,7 @@ function App() {
               <Grid item xs={12}>
                 <Main />
                 <News />
-                {/* <NextMatches /> */}
+                <NextMatches />
 
                 {/* <Fixtures /> */}
                 {/* <League /> */}
@@ -48,23 +48,6 @@ function App() {
           </Box>
         </Container>
       </ThemeProvider>
-
-      {/* <Box mt={2} ml="auto" mr="auto" width={1200} className="app"> */}
-      {/* <Card> */}
-      {/* <Fixtures /> */}
-      {/* <Scorers /> */}
-      {/* </Card> */}
-      {/* </Box> */}
-
-      {/* <Grid item xs={12} md={6} lg={4}>
-            <Paper>1</Paper>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <Paper>1</Paper>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <Paper>1</Paper>
-          </Grid> */}
     </>
   );
 }
