@@ -15,7 +15,7 @@ import TopScorers from "./TopScorers/TopScorers";
 
 const AfterGame = () => {
   return (
-    <Grid container>
+    <Grid container spacing={1}>
       <Grid item xs={12} sm={6}>
         <TopScorers />
       </Grid>

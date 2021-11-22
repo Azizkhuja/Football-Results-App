@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { blue } from "@mui/material/colors";
 
 import {
   Grid,
@@ -11,7 +12,6 @@ import {
   Avatar,
   ListItemText,
   Divider,
-  Paper,
 } from "@mui/material";
 
 const topScorersAll = [
@@ -547,7 +547,12 @@ const TopScorers = () => {
                     </Typography>
                   }
                 />
-                <Paper
+                <Avatar sx={{ bgcolor: blue[500] }}>
+                  {topScorer.statistics.map(
+                    (topScorerStatistic) => topScorerStatistic.goals.total
+                  )}
+                </Avatar>
+                {/* <Paper
                   sx={{
                     padding: 2,
                     fontWeight: 100,
@@ -556,7 +561,7 @@ const TopScorers = () => {
                   {topScorer.statistics.map(
                     (topScorerStatistic) => topScorerStatistic.goals.total
                   )}
-                </Paper>
+                </Paper> */}
               </ListItem>
               <Divider variant="inset" component="li" />
             </List>
