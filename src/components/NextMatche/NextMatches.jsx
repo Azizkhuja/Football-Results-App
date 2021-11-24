@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
+import { Link } from "react-router-dom";
+
 import { Grid, Card, Typography, Stack, Avatar, Button } from "@mui/material";
 
 const demoLogo =
@@ -403,7 +405,9 @@ const NextMatches = () => {
           <Typography variant="h5">Next Matches</Typography>
         </Grid>
         <Grid item xs={6} sx={{ display: "flex", justifyContent: "flex-end" }}>
-          <Button variant="text">View all</Button>
+          <Link to="matches">
+            <Button variant="text">View all</Button>
+          </Link>
         </Grid>
       </Grid>
       <Grid container spacing={1}>

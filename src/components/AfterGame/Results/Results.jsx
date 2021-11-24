@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
+import { Link } from "react-router-dom";
 
 import { blue } from "@mui/material/colors";
 
@@ -397,14 +398,16 @@ const Results = () => {
           <Typography variant="h5">Results</Typography>
         </Grid>
         <Grid item xs={6} sx={{ display: "flex", justifyContent: "flex-end" }}>
-          <Button variant="text">View all</Button>
+          <Link to="results">
+            <Button variant="text">View all</Button>
+          </Link>
         </Grid>
       </Grid>
       <Grid container>
         {getResults.map((getResult, index) => (
           <Grid item xs={12} key={index}>
-            <Card sx={{ display: "flex" }}>
-              <Grid container sx={{ alignItems: "center" }}>
+            <Card sx={{ display: "flex", borderRadius: 0 }}>
+              <Grid container sx={{ alignItems: "center", bgcolor: "white" }}>
                 <Grid item xs={12} sx={{ textAlign: "center" }}>
                   <Typography
                     variant="body2"

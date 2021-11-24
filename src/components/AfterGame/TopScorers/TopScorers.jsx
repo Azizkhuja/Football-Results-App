@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { blue } from "@mui/material/colors";
+import { Link } from "react-router-dom";
 
 import {
   Grid,
@@ -12,6 +13,7 @@ import {
   Avatar,
   ListItemText,
   Divider,
+  Box,
 } from "@mui/material";
 
 const topScorersAll = [
@@ -506,53 +508,64 @@ const TopScorers = () => {
           <Typography variant="h5">Top Scorers</Typography>
         </Grid>
         <Grid item xs={6} sx={{ display: "flex", justifyContent: "flex-end" }}>
-          <Button variant="text">View all</Button>
+          <Link to="topscorers">
+            <Button variant="text">View all</Button>
+          </Link>
         </Grid>
       </Grid>
-      <Grid container>
-        {topScorersAll.map((topScorer) => (
-          <Grid item xs={12} key={topScorer.player.id}>
-            <List sx={{ width: "100%", bgcolor: "background.paper" }}>
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar
-                    alt={topScorer.player.name}
-                    src={topScorer.player.photo}
-                  />
-                </ListItemAvatar>
-                <ListItemAvatar>
-                  <Avatar
-                    // src={topScorer.player.photo}
-                    src={topScorer.statistics.map(
-                      (playerClub) => playerClub?.team?.logo
-                    )}
-                  />
-                  {/* {console.log(
+      <Box
+        sx={{
+          bgcolor: "#fff",
+        }}
+      >
+        <Grid container>
+          {topScorersAll.map((topScorer) => (
+            <Grid item xs={12} key={topScorer.player.id}>
+              <List
+                sx={{
+                  width: "100%",
+                }}
+              >
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar
+                      alt={topScorer.player.name}
+                      src={topScorer.player.photo}
+                    />
+                  </ListItemAvatar>
+                  <ListItemAvatar>
+                    <Avatar
+                      // src={topScorer.player.photo}
+                      src={topScorer.statistics.map(
+                        (playerClub) => playerClub?.team?.logo
+                      )}
+                    />
+                    {/* {console.log(
                     topScorer.statistics.map(
                       (playerClub) => playerClub.team.name
                     )
                   )} */}
-                </ListItemAvatar>
-                <ListItemText
-                  primary={topScorer.player.name}
-                  secondary={
-                    <Typography
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
-                    >
-                      {topScorer.statistics.map(
-                        (topScorerStatistic) => topScorerStatistic.team.name
-                      )}
-                    </Typography>
-                  }
-                />
-                <Avatar sx={{ bgcolor: blue[500] }}>
-                  {topScorer.statistics.map(
-                    (topScorerStatistic) => topScorerStatistic.goals.total
-                  )}
-                </Avatar>
-                {/* <Paper
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={topScorer.player.name}
+                    secondary={
+                      <Typography
+                        component="span"
+                        variant="body2"
+                        color="text.primary"
+                      >
+                        {topScorer.statistics.map(
+                          (topScorerStatistic) => topScorerStatistic.team.name
+                        )}
+                      </Typography>
+                    }
+                  />
+                  <Avatar sx={{ bgcolor: blue[500] }}>
+                    {topScorer.statistics.map(
+                      (topScorerStatistic) => topScorerStatistic.goals.total
+                    )}
+                  </Avatar>
+                  {/* <Paper
                   sx={{
                     padding: 2,
                     fontWeight: 100,
@@ -562,12 +575,13 @@ const TopScorers = () => {
                     (topScorerStatistic) => topScorerStatistic.goals.total
                   )}
                 </Paper> */}
-              </ListItem>
-              <Divider variant="inset" component="li" />
-            </List>
-          </Grid>
-        ))}
-      </Grid>
+                </ListItem>
+                <Divider variant="inset" component="li" />
+              </List>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </>
   );
 };
