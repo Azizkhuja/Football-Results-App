@@ -400,7 +400,7 @@ const NextMatches = () => {
   }, []);
   return (
     <>
-      <Grid container mt={2}>
+      <Grid container mt={1}>
         <Grid item xs={6}>
           <Typography variant="h5">Next Matches</Typography>
         </Grid>

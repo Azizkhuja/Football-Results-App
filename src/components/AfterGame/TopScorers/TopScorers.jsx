@@ -481,6 +481,7 @@ const topScorersAll = [
 
 const TopScorers = () => {
   let currYear = new Date().getFullYear();
+  // const [topScorersAll, setTopScorersAll] = useState([]);
   useEffect(() => {
     // var options = {
     //   method: "GET",
@@ -494,8 +495,8 @@ const TopScorers = () => {
     // axios
     //   .request(options)
     //   .then(function (response) {
-    //     const apiGetter = response.data.response.slice(0, 8);
-    //     console.log(apiGetter);
+    //     const apiGetter = response.data.response;
+    //     setTopScorersAll(apiGetter);
     //   })
     //   .catch(function (error) {
     //     console.error(error);

@@ -367,6 +367,7 @@ const getResults = [
 ];
 
 const Results = () => {
+  // const [getAllResults, setGetAllResults] = useState([]);
   useEffect(() => {
     // let currYear = new Date().getFullYear();
     // let currMonth = new Date().getMonth() + 1;
@@ -384,8 +385,8 @@ const Results = () => {
     // axios
     //   .request(options)
     //   .then(function (response) {
-    //     const apiGetter = response.data.response.slice(0, 8);
-    //     console.log(apiGetter);
+    //     const apiGetter = response.data.response;
+    //     setGetAllResults(apiGetter);
     //   })
     //   .catch(function (error) {
     //     console.error(error);
