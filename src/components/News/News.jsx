@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -73,30 +72,12 @@ const demoImg =
 // ];
 
 const News = () => {
-  const { newsAll, setNewsAll } = useContext(NewsContext);
-  useEffect(() => {
-    // var options = {
-    //   method: "GET",
-    //   url: "https://premier-league-news.p.rapidapi.com/news",
-    //   headers: {
-    //     "x-rapidapi-host": "premier-league-news.p.rapidapi.com",
-    //     "x-rapidapi-key": "5275a8e1dcmshe6cde61534690eap13333ejsncffe8ac2d285",
-    //   },
-    // };
-    // axios
-    //   .request(options)
-    //   .then(function (response) {
-    //     const apiGetter = response.data.slice(0, 8);
-    //     console.log(apiGetter);
-    //   })
-    //   .catch(function (error) {
-    //     console.error(error);
-    //   });
-  }, []);
+  const { newsAll } = useContext(NewsContext);
+
   return (
     <>
       {/* News Title */}
-      <Grid container mt={2}>
+      <Grid container mt={2} mb={0}>
         <Grid item xs={6}>
           <Typography variant="h5">News</Typography>
         </Grid>
