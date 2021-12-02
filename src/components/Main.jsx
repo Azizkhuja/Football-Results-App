@@ -17,13 +17,17 @@ const Main = () => {
         <Grid item md={7}>
           <CardContent>
             <Typography
-              variant="h2"
+              variant={matches ? "h4" : "h2"}
               component="div"
               sx={{ fontWeight: "bold" }}
             >
               Football Statistics
             </Typography>
-            <Typography variant="body1" color="text.secondary">
+            <Typography
+              p={matches ? 1 : ""}
+              variant={matches ? "body2" : "body1"}
+              color="text.secondary"
+            >
               Football Statistics is the premier football stats and data
               coverage in 1000+ football leagues worldwide and cover football
               results. Team stats, League stats, and Player stats are covered

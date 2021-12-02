@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import useMediaQuery from "@mui/material/useMediaQuery";
 import "swiper/css";
 
 import {
@@ -13,73 +13,20 @@ import {
   CardActionArea,
   Button,
 } from "@mui/material";
-import NewsPage from "./NewsPage";
 import { NewsContext } from "../../contexts/NewsContext";
 
 const demoImg =
   "http://static1.squarespace.com/static/5730994c746fb95e170be09a/t/5daf41beac36a72a05de6d6f/1571766775892/sports+news.jpg?format=1500w";
 
-// const arrNews = [
-//   {
-//     source: "Independent",
-//     title: "Man City vs Everton predicted line-ups: Team news ahead of today",
-//     url: "https://www.independent.co.uk/sport/football/man-city-everton-team-news-predicted-lineup-b1960925.html",
-//     img: "https://static.independent.co.uk/2021/11/19/15/GettyImages-1236073099.jpg?width=640&auto=webp&quality=75",
-//   },
-//   {
-//     source: "Independent",
-//     title: "Man City vs Everton prediction: How will fixture play out today?",
-//     url: "https://www.independent.co.uk/sport/football/man-city-everton-prediction-form-odds-b1960960.html",
-//     img: "https://static.independent.co.uk/2021/11/19/16/GettyImages-1236385052.jpg?width=640&auto=webp&quality=75",
-//   },
-//   {
-//     source: "Independent",
-//     title:
-//       "Man City vs Everton live stream: How to watch online and on TV today",
-//     url: "https://www.independent.co.uk/sport/football/man-city-everton-live-stream-watch-online-b1960827.html",
-//     img: "https://static.independent.co.uk/2021/11/19/14/GettyImages-1235644720.jpg?width=640&auto=webp&quality=75",
-//   },
-//   {
-//     source: "Independent",
-//     title: "Ole Gunnar Solskjaer news LIVE: Man Utd manager set to be sacked",
-//     url: "https://www.independent.co.uk/sport/football/solskjaer-news-live-man-utd-b1961565.html",
-//     img: "https://static.independent.co.uk/2021/11/21/08/PRI211208401.jpg?width=640&auto=webp&quality=75",
-//   },
-//   {
-//     source: "Independent",
-//     title: "Tuchel praises Chelsea’s ‘wild momentum and freedom’ in attack",
-//     url: "https://www.independent.co.uk/sport/football/thomas-tuchel-brendan-rodgers-londoners-leicester-cesar-azpilicueta-b1961575.html",
-//     img: "https://static.independent.co.uk/2021/11/21/09/d148f7e29fe938520fb74bcf127f5b14Y29udGVudHNlYXJjaGFwaSwxNjM3NTM2NzQy-2-1.63839504?width=640&auto=webp&quality=75",
-//   },
-//   {
-//     source: "Independent",
-//     title: "Saint-Maximin backs Howe to haul Newcastle clear of trouble",
-//     url: "https://www.independent.co.uk/sport/football/allan-saintmaximin-eddie-howe-newcastle-premier-league-ivan-toney-b1961574.html",
-//     img: "https://static.independent.co.uk/2021/11/21/09/PRI211200666.jpg?width=640&auto=webp&quality=75",
-//   },
-//   {
-//     source: "Independent",
-//     title: "The favourites to become next Manchester United manager",
-//     url: "https://www.independent.co.uk/sport/football/man-utd-next-manager-odds-b1961524.html",
-//     img: "https://static.independent.co.uk/2021/11/21/03/newFile.jpg?width=640&auto=webp&quality=75",
-//   },
-//   {
-//     source: "Independent",
-//     title: "Solskjaer on brink of Manchester United exit",
-//     url: "https://www.independent.co.uk/sport/football/manchester-united-ole-gunnar-solskjaer-fletcher-b1961506.html",
-//     img: "https://static.independent.co.uk/2021/11/20/19/45ae8af9f19bb48c9e96d8b4201d606aY29udGVudHNlYXJjaGFwaSwxNjM3NTIwNDA2-2.63844110.jpg?width=640&auto=webp&quality=75",
-//   },
-// ];
-
 const News = () => {
   const { newsAll } = useContext(NewsContext);
-
+  const newsTitle = useMediaQuery("(max-width: 375px)");
   return (
     <>
       {/* News Title */}
       <Grid container mt={2} mb={0}>
         <Grid item xs={6}>
-          <Typography variant="h5">News</Typography>
+          <Typography variant={newsTitle ? "subtitle1" : "h5"}>News</Typography>
         </Grid>
         <Grid item xs={6} sx={{ display: "flex", justifyContent: "flex-end" }}>
           <Link to="/news">

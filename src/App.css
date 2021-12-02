@@ -1,3 +1,8 @@
 a {
   text-decoration: none;
 }
+.header-logo {
+  color: #fff;
+  margin-right: 5px;
+  text-transform: uppercase;
+}

@@ -1,14 +1,6 @@
 import React from "react";
 
-import {
-  Grid,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  CardActionArea,
-  Button,
-} from "@mui/material";
+import { Grid } from "@mui/material";
 
 import Results from "./Results/Results";
 import TopScorers from "./TopScorers/TopScorers";
