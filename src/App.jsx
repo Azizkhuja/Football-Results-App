@@ -24,6 +24,7 @@ import NewsPage from "./components/News/NewsPage";
 import TopScorerItem from "./components/AfterGame/TopScorers/TopScorerItem";
 import Loading from "./components/Loading";
 import ResultsItem from "./components/AfterGame/Results/ResultsItem";
+import Footer from "./components/Footer";
 
 function initizeAnalytics() {
   ReactGA.initialize("G-BLL9K3XSHM");
@@ -111,6 +112,7 @@ function App() {
                     <ResultsItem />
                   </Route>
                 </Switch>
+                <Footer />
               </NewsContext.Provider>
             </>
           )}
