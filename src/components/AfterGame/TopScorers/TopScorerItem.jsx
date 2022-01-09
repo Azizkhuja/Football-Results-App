@@ -17,12 +17,12 @@ const noAssists = 0;
 
 const TopScorerItem = () => {
   const [topScorersAll, setTopScorersAll] = useState([]);
-  let currYear = new Date().getFullYear();
+  // let currYear = new Date().getFullYear();
   useEffect(() => {
     var options = {
       method: "GET",
       url: "https://api-football-beta.p.rapidapi.com/players/topscorers",
-      params: { season: currYear, league: "39" },
+      params: { season: "2021", league: "39" },
       headers: {
         "x-rapidapi-host": "api-football-beta.p.rapidapi.com",
         "x-rapidapi-key": "5275a8e1dcmshe6cde61534690eap13333ejsncffe8ac2d285",
