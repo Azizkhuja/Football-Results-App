@@ -43,79 +43,47 @@ const theme = createTheme({
 });
 
 function App() {
-  const [newsAll, setNewsAll] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   initizeAnalytics();
-  useEffect(() => {
-    var options = {
-      method: "GET",
-      url: "https://premier-league-news.p.rapidapi.com/news",
-      headers: {
-        "x-rapidapi-host": "premier-league-news.p.rapidapi.com",
-        "x-rapidapi-key": "5275a8e1dcmshe6cde61534690eap13333ejsncffe8ac2d285",
-      },
-    };
-    axios
-      .request(options)
-      .then(function (response) {
-        const apiGetter = response.data.slice(0, 80);
-        setNewsAll(apiGetter);
-        setIsLoading(false);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-  }, []);
   return (
     <Router>
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <Container>
-          {isLoading ? (
-            <Loading />
-          ) : (
-            <>
-              <Navbar />
-              <NewsContext.Provider
-                value={{ newsAll, setNewsAll, isLoading, setIsLoading }}
-              >
-                <Switch>
-                  <Route exact path="/">
-                    <Box
-                      mt={1}
-                      sx={{
-                        bgcolor: "secondary.main",
-                        borderRadius: "10px",
-                        p: 2,
-                      }}
-                    >
-                      <Grid container>
-                        <Grid item xs={12}>
-                          <Main />
-                          <News />
-                          <NextMatches />
-                          <AfterGame />
-                        </Grid>
+          <>
+            <Navbar />
+            <NewsContext.Provider value={{}}>
+              <Switch>
+                <Route exact path="/">
+                  <Box
+                    mt={1}
+                    sx={{
+                      bgcolor: "secondary.main",
+                      borderRadius: "10px",
+                      p: 2,
+                    }}
+                  >
+                    <Grid container>
+                      <Grid item xs={12}>
+                        <Main />
+                        <NextMatches />
+                        <AfterGame />
                       </Grid>
-                    </Box>
-                  </Route>
-                  <Route exact path="/news">
-                    <NewsPage />
-                  </Route>
-                  <Route exact path="/matches">
-                    <NextMatch />
-                  </Route>
-                  <Route exact path="/topscorers">
-                    <TopScorerItem />
-                  </Route>
-                  <Route exact path="/results">
-                    <ResultsItem />
-                  </Route>
-                </Switch>
-                <Footer />
-              </NewsContext.Provider>
-            </>
-          )}
+                    </Grid>
+                  </Box>
+                </Route>
+                <Route exact path="/matches">
+                  <NextMatch />
+                </Route>
+                <Route exact path="/topscorers">
+                  <TopScorerItem />
+                </Route>
+                <Route exact path="/results">
+                  <ResultsItem />
+                </Route>
+              </Switch>
+              <Footer />
+            </NewsContext.Provider>
+          </>
         </Container>
       </ThemeProvider>
     </Router>

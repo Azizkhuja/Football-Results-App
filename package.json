@@ -12,6 +12,7 @@
     "@mui/icons-material": "^5.1.0",
     "@mui/material": "^5.1.0",
     "axios": "^0.24.0",
+    "esbuild": "^0.13.13",
     "firebase": "^9.5.0",
     "moment": "^2.29.1",
     "react": "^17.0.0",
