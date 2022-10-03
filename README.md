@@ -1,4 +1,6 @@
-# Football-Results-App | [Link to DEMO!](https://statistics-football.netlify.app/)
+## Football-Results-App
+
+[Link to DEMO!](https://statistics-football.netlify.app/)
 
 ![Screenshot](Football-Statistics.png)
 
