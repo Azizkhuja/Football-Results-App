@@ -18,14 +18,14 @@ import {
 } from "@mui/material";
 
 const TopScorers = () => {
-  // let currYear = new Date().getFullYear(); After new season needs to replace as a variable
+  let currYear = new Date().getFullYear();
   const [topScorersAll, setTopScorersAll] = useState([]);
   const titleRes = useMediaQuery("(max-width: 375px)");
   useEffect(() => {
     var options = {
       method: "GET",
       url: "https://api-football-beta.p.rapidapi.com/players/topscorers",
-      params: { season: "2021", league: "39" },
+      params: { season: `${currYear}`, league: "39" },
       headers: {
         "x-rapidapi-host": "api-football-beta.p.rapidapi.com",
         "x-rapidapi-key": "5275a8e1dcmshe6cde61534690eap13333ejsncffe8ac2d285",
