@@ -56,7 +56,7 @@ const Navbar = () => {
           </Link>
         </Typography>
 
-        {user ? (
+        {/* {user ? (
           <>
             <Avatar alt="Remy Sharp" src={user?.photoURL} />
             <Button color="inherit" onClick={logOut}>
@@ -67,7 +67,7 @@ const Navbar = () => {
           <Button color="inherit" onClick={signInWithGoogle}>
             Sign In
           </Button>
-        )}
+        )} */}
       </Toolbar>
     </AppBar>
   );
