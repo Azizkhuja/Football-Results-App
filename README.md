@@ -4,7 +4,7 @@
 
 ![Screenshot](Football-Statistics.png)
 
-##### Up-to-date football results website and Football Statistics is the premier football stats and data coverage in 1000+ football leagues worldwide and cover football results. Team stats, League stats, and Player stats are covered with details goals scored!
+##### Up-to-date football results website and Football Statistics is the premier football stats and data coverage in 1000+ football leagues worldwide and cover football results. Team stats, League stats, and Player stats are covered with details goals scored@
 
 #### It is fully functional website and showing real data about last minute football news and updates!
 
