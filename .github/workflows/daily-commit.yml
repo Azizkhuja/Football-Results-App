@@ -18,9 +18,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Replace invisible character in README.md
+      - name: Add invisible empty line to README.md
         run: |
-          echo -n "​" > README.md  # replaces the file content with an invisible char
+          echo "" >> README.md  # adds a blank line
+          # Optional: if you want invisible line instead, use:
+          # echo "​" >> README.md
 
       - name: Commit and push changes
         env:
