@@ -2,8 +2,8 @@ name: Hourly Commit (Invisible)
 
 on:
   schedule:
-    - cron: '0 * * * *' # runs every hour, at minute 0
-  workflow_dispatch: # allows manual run
+    - cron: '0 * * * *' # runs every hour
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -18,9 +18,9 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Add invisible character to README.md
+      - name: Replace invisible character in README.md
         run: |
-          echo -n "​" > README.md  # replaces content each time (invisible char)
+          echo -n "​" > README.md  # replaces the file content with an invisible char
 
       - name: Commit and push changes
         env:
@@ -28,9 +28,6 @@ jobs:
         run: |
           git config --global user.name "Azizkhuja"
           git config --global user.email "40321619+Azizkhuja@users.noreply.github.com"
-          git fetch origin master
-          git checkout master
-          git pull --rebase origin master
           git add README.md
-          git commit -m "Automated hourly commit $(date)" || echo "No changes"
-          git push origin master
+          git commit -m "Automated hourly commit $(date)" || echo "No changes to commit"
+          git push
